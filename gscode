@@ -1,0 +1,16 @@
+function doGet(request) {
+  var sheet = SpreadsheetApp.openById('1GPS9lmNzxQdjbBDQgBvNFA7sSvnPHCRuSr4Cz-vCuWE');
+  var res = {"status":"SUCCESS"};
+  try{
+    var name = request.parameter.name;
+    var email = request.parameter.email;
+    var marks =  request.parameter.marks;
+    var rowData = sheet.appendRow([name,email,marks]);
+}
+  catch(exception){
+    res = {"status":"FAILED","message":exception};
+            }
+   return ContentService
+    .createTextOutput(JSON.stringify((res)))
+    .setMimeType(ContentService.MimeType.JSON);      
+}
