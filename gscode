@@ -1,5 +1,5 @@
 function doGet(request) {
-  var sheet = SpreadsheetApp.openById('1GPS9lmNzxQdjbBDQgBvNFA7sSvnPHCRuSr4Cz-vCuWE');
+  var sheet = SpreadsheetApp.openById('/* Your spreadsheet's URL');
   var res = {"status":"SUCCESS"};
   try{
     var name = request.parameter.name;
